@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <title>Home Hector Utreras</title>
+      <link rel="stylesheet" href="static/css/style.css">
+      <link rel="stylesheet" type = "text/css" href="static/css/bootstrap.css">
+  </head>
+
+  <body background="static/img/back1.jpg">
+
+            <div class="nav-bar">
+        <nav class="navbar navbar-toggleable-md navbar-inverse">
+        <a class="navbar-brand" href="#"><img src="static/img/logo.png"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand hidden-lg-up" href="#"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% if session.user_id %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Search</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">{{ session.user_name }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                </ul>
+            {% else %}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>                
+                </ul>
+            {% endif %}
+        </div>
+      </nav>
+    </div>
+
+
+      {% block body %}
+
+      {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+      <!------------SCRIPTS SECTION------------------>
+  
+  	  <script src="static/js/jquery-3.2.1.min.js"></script>
+      <script src="static/js/popper.min.js"></script>
+      <script src="static/js/bootstrap.min.js"></script>
+      <script type="static/js/smooth-scroll.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="static/js/bootstrap.min.js"></script>
+      <script source="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
+  
+  </body>
+</html>

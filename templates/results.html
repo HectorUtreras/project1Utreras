@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+        
+    {% if message %}
+
+        
+        <div class = "alert alert-danger" role = "alert">
+            <h4 class = "alert-heading">An Error has ocurred</h4><br>
+            <p>
+                {{ error_message }}
+            </p>
+        </div>
+        <br>
+        <h4>{{ message }}</h4>
+
+    {% else %}
+    <div class="jumbotron">
+        <h1><b>Matching Results</b></h1>
+    </div>
+    {% endif %}
+    <div class="jumbotron">
+    {% for book in book_list %}
+
+        <ul>
+            <a href="{{ url_for('description', book_id = book.id) }}"> <b>{{ book.title }}</b> by {{ book.author }}</a>
+        </ul>
+
+    {% endfor %}
+    </div>
+
+
+{% endblock %}
